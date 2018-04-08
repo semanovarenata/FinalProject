@@ -26,6 +26,4 @@
         android:text="Lunch Time"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-  />
-
 </LinearLayout>
