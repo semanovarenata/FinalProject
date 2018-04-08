@@ -1,6 +1,4 @@
-package com.renatasemanova.dailymenu.API.model;
-
-import com.renatasemanova.dailymenu.API.ZomatoAPI;
+package com.renatasemanova.dailymenu.API;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -11,25 +9,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String URL = "https://d17h27t6h515a5.cloudfront.net/";
-
     private static Retrofit retrofitClient = null;
 
-    private static Retrofit getRetrofitClient(){
+    public static Retrofit getRetrofitClient(String baseUrl) {
         if (retrofitClient == null) {
             retrofitClient = new Retrofit.Builder()
-                    .baseUrl(URL)
+                    .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
 
         return retrofitClient;
     }
-
-    public static ZomatoAPI getApiService() {
-        return getRetrofitClient().create(ZomatoAPI.class);
-    }
-
-
-
 }

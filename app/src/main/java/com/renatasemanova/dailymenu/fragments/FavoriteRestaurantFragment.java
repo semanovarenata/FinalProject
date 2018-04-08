@@ -18,6 +18,7 @@ public class FavoriteRestaurantFragment extends BaseFragment{
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
+        getActivity().setTitle(R.string.fav_restaurant);
 
     }
 

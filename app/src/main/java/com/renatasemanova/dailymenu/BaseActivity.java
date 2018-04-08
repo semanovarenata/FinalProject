@@ -42,7 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void changeTo(BaseFragment fragment) {
         changeTo(fragment, null);
-        showArrow(false);
+//        showArrow(false);
     }
 
     public void changeTo(BaseFragment fragment, String tag) {
@@ -56,7 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void changeToWithBack(BaseFragment fragment, Object thisFragmentOrActivity) {
         changeToWithBack(fragment, name(thisFragmentOrActivity) + "_" + name(fragment));
-        showArrow(true);
+//        showArrow(true);
     }
 
     public void changeToWithBack(BaseFragment fragment, String tag) {

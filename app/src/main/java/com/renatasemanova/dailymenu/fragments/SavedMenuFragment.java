@@ -18,6 +18,7 @@ public class SavedMenuFragment extends BaseFragment{
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
+        getActivity().setTitle(R.string.saved_menu);
 
     }
 

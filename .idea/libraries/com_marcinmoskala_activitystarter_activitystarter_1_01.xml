@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.marcinmoskala.activitystarter:activitystarter-1.01">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/activitystarter-1.01.aar/1e4648996bf59d609685505c3284e6a0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/activitystarter-1.01.aar/1e4648996bf59d609685505c3284e6a0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.marcinmoskala.activitystarter/activitystarter/1.01/9bcc284aebb118862dfed278ccf82e46ed50879e/activitystarter-1.01-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

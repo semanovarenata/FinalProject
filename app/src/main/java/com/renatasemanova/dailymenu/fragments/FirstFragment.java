@@ -18,6 +18,7 @@ public class FirstFragment extends BaseFragment{
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
+        getActivity().setTitle(R.string.find_restaurant);
 
     }
 
