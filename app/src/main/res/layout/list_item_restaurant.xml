@@ -15,17 +15,16 @@
         android:background="@color/white"
         card_view:cardCornerRadius="6dp"
         card_view:cardElevation="2dp"
-        card_view:cardUseCompatPadding="true"
         app:cardBackgroundColor="@color/white"
         >
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="65dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/fork"/>
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:src="@mipmap/ic_restaurant"/>
 
         <TextView
             android:id="@+id/restaurant_name"
@@ -36,8 +35,7 @@
             android:ellipsize="end"
             android:gravity="left"
             android:maxLines="1"
-            android:paddingBottom="8dp"
-            android:paddingLeft="80dp"
+            android:paddingLeft="90dp"
             android:paddingRight="20dp"
             android:text="AHOJ"
             android:textColor="@color/colorPrimaryDark"

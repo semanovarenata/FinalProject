@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/detail_container_scroll"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:fillViewport="true"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -43,14 +43,14 @@
             android:paddingRight="8dp">
 
 
-            <android.support.v7.widget.RecyclerView
+            <TextView
                 android:id="@+id/steps_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/toolbar"
                 tools:listitem="@layout/list_item_saved_menu">
 
-            </android.support.v7.widget.RecyclerView>
+            </TextView>
 
 
         </RelativeLayout>

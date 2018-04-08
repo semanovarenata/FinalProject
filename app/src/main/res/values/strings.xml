@@ -2,6 +2,7 @@
     <string name="app_name">DailyMenu</string>
     <string name="up">Up</string>
     <string name="find_restaurant">Find restaurant</string>
+    <string name="detail_restaurant">Restaurant detail</string>
     <string name="saved_menu">Saved menu</string>
     <string name="daily_menu">Daily menu</string>
     <string name="fav_restaurant">Favorite restaurant</string>

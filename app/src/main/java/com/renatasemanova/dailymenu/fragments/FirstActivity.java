@@ -14,12 +14,11 @@ import com.renatasemanova.dailymenu.R;
 
 public class FirstActivity extends BaseActivity {
 
-//    @BindView(R.id.search)
-//    SearchView searchView;
+
+    private DrawerLayout drawer;
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -37,8 +36,7 @@ public class FirstActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -61,17 +59,19 @@ public class FirstActivity extends BaseActivity {
                         }
 
                         menuItem.setChecked(true);
-                        // close drawer when item is tapped
+
                         drawer.closeDrawers();
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
                         return true;
                     }
                 });
 
         changeTo(new FirstFragmentBuilder().build());
     }
+
+    public DrawerLayout getDrawer(){
+        return this.drawer;
+    }
+
+
 
 }
