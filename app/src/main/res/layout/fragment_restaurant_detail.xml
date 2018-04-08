@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_container_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:fillViewport="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/main_detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Ingredients_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="30dp"
+                android:text="@string/daily_menu"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/menu_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/linear_buttons_layout"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/steps_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/toolbar"
+                tools:listitem="@layout/list_item_saved_menu">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/menu_recycler"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp">
+
+
+            <Button
+                android:id="@+id/save_menu_button"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/save_menu"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/save_restaurant_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimaryDark"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/add_restaurant_to_favourite"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear_review_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_container"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/review_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="30dp"
+                android:text="@string/review"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/review_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/linear_review_container"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/review_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/toolbar"
+                tools:listitem="@layout/list_item_saved_menu">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_address_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/review_recycler"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="30dp"
+                android:text="@string/address"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/linear_address_container"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="10dp">
+
+            <!--<com.google.android.gms.maps.MapView-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:map="http://schemas.android.com/apk/res-auto"-->
+                <!--android:id="@+id/mapView"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:clickable="true"-->
+                <!--map:uiCompass="true"-->
+                <!--map:zOrderOnTop="true"-->
+                <!--map:uiZoomControls="true"-->
+                <!--android:background="#00000000" />-->
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

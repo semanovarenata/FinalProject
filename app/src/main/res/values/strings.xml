@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DailyMenu</string>
+    <string name="up">Up</string>
+    <string name="search">Search restaurant</string>
+    <string name="saved_menu">saved menu</string>
+    <string name="daily_menu">Daily menu</string>
+    <string name="save_menu">save menu</string>
+    <string name="add_restaurant_to_favourite">Add restaurant to favourite</string>
+    <string name="review">Review</string>
+    <string name="address">Address</string>
+
+</resources>
