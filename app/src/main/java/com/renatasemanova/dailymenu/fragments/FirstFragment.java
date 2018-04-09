@@ -73,8 +73,10 @@ public class FirstFragment extends BaseFragment {
             @Override
             public void onResponse(Call<Search> call, Response<Search> response) {
                 hideLoading();
-                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                recyclerView.setAdapter(new SearchAdapter(baseActivity, response.body()));
+                if(recyclerView!= null){
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    recyclerView.setAdapter(new SearchAdapter(baseActivity, response.body()));
+                }
             }
 
             @Override

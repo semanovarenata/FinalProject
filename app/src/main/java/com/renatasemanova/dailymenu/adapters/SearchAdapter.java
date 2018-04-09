@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.renatasemanova.dailymenu.API.model.Location;
 import com.renatasemanova.dailymenu.API.model.Restaurant;
 import com.renatasemanova.dailymenu.API.model.Search;
 import com.renatasemanova.dailymenu.BaseActivity;
@@ -62,7 +63,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             this.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    activity.changeToWithBack(new RestaurantDetailFragmentBuilder().build(),this);
+                    Location location = results.get(position).getRestaurant().getLocation();
+                    activity.changeToWithBack(new RestaurantDetailFragmentBuilder(location.getAddress(), location.getLatitude(),location.getLongitude()).build(),this);
+
 //                    Log.d("TAG","key: "+results.get(position).getKey());
                 }
             });
