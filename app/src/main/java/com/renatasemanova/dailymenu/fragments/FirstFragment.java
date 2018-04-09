@@ -54,15 +54,14 @@ public class FirstFragment extends BaseFragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 text = query;
-                Toast.makeText(baseActivity,"Our word : "+query,Toast.LENGTH_SHORT).show();
+                Toast.makeText(baseActivity, "Our word : " + query, Toast.LENGTH_SHORT).show();
                 search(text);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-            text = newText;
-
+                text = newText;
                 return false;
             }
         });

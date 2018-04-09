@@ -10,7 +10,7 @@ import com.renatasemanova.dailymenu.API.model.Restaurant;
 import com.renatasemanova.dailymenu.API.model.Search;
 import com.renatasemanova.dailymenu.BaseActivity;
 import com.renatasemanova.dailymenu.R;
-import com.renatasemanova.dailymenu.fragments.RestaurantFragmentBuilder;
+import com.renatasemanova.dailymenu.fragments.RestaurantDetailFragmentBuilder;
 
 import java.util.List;
 
@@ -62,7 +62,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             this.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    activity.changeToWithBack(new RestaurantFragmentBuilder().build(),this);
+                    activity.changeToWithBack(new RestaurantDetailFragmentBuilder().build(),this);
 //                    Log.d("TAG","key: "+results.get(position).getKey());
                 }
             });

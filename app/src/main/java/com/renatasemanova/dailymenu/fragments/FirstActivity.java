@@ -66,6 +66,7 @@ public class FirstActivity extends BaseActivity {
                 });
 
         changeTo(new FirstFragmentBuilder().build());
+
     }
 
     public DrawerLayout getDrawer(){
