@@ -238,7 +238,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
             restaurant_id = mFirebaseDatabase.push().getKey();
         }
 
-        RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name);
+        RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name, address,latitude,longitude,rating);
 
         mFirebaseDatabase.child(restaurant_id).setValue(restaurantDB);
 
