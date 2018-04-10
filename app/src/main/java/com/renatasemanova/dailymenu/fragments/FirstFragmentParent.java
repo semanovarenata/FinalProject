@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import com.renatasemanova.dailymenu.API.model.Search;
 import com.renatasemanova.dailymenu.BaseFragment;
 import com.renatasemanova.dailymenu.R;
 import com.renatasemanova.dailymenu.adapters.SearchAdapter;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import retrofit2.Call;
@@ -28,6 +30,10 @@ public class FirstFragmentParent extends BaseFragment {
     @BindView(R.id.search)
     SearchView searchView;
 
+    @BindView(R.id.image)
+    ImageView image;
+
+
     public String text;
 
     @Override
@@ -40,11 +46,20 @@ public class FirstFragmentParent extends BaseFragment {
         userInput();
         search(text);
         ((FirstActivity)baseActivity).enableViews(false);
+        loadImage();
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    public void loadImage(){
+        Picasso.get()
+                .load(R.drawable.masala_cater_blur)
+                .fit()
+                .into(image);
+
     }
 
 

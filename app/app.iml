@@ -154,6 +154,7 @@
     <orderEntry type="library" name="com.squareup.okhttp3:logging-interceptor:3.4.0@jar" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-ads-12.0.1" level="project" />
     <orderEntry type="library" name="com.android.support:design-27.1.1" level="project" />
+    <orderEntry type="library" name="com.squareup.picasso:picasso-2.71828" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-common-12.0.1" level="project" />
     <orderEntry type="library" name="com.android.support:transition-27.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="com.squareup:javawriter:2.1.1@jar" level="project" />
@@ -213,6 +214,7 @@
     <orderEntry type="library" name="com.android.support:support-compat-27.1.1" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:livedata-core-1.1.0" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-database-12.0.1" level="project" />
+    <orderEntry type="library" name="com.android.support:exifinterface-27.1.0" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-gass-12.0.1" level="project" />
     <orderEntry type="library" name="com.hannesdorfmann.fragmentargs:annotation:3.0.2@jar" level="project" />
     <orderEntry type="library" name="com.google.firebase:firebase-analytics-impl-license-12.0.1" level="project" />
