@@ -10,6 +10,7 @@ import com.renatasemanova.dailymenu.API.model.Location;
 import com.renatasemanova.dailymenu.API.model.Restaurant;
 import com.renatasemanova.dailymenu.API.model.Restaurant_;
 import com.renatasemanova.dailymenu.API.model.Search;
+import com.renatasemanova.dailymenu.API.model.UserRating;
 import com.renatasemanova.dailymenu.BaseActivity;
 import com.renatasemanova.dailymenu.R;
 import com.renatasemanova.dailymenu.fragments.RestaurantDetailFragmentBuilder;
@@ -67,7 +68,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                     Location location = results.get(position).getRestaurant().getLocation();
                     Restaurant_ name = results.get(position).getRestaurant();
 
-                    activity.changeToWithBack(new RestaurantDetailFragmentBuilder(location.getAddress(),name.getId(),location.getLatitude(),location.getLongitude(),name.getName()).build(),this);
+                    UserRating rating = results.get(position).getRestaurant().getUserRating();
+
+                    activity.changeToWithBack(new RestaurantDetailFragmentBuilder(
+                            location.getAddress(),
+                            name.getId(),
+                            location.getLatitude(),
+                            location.getLongitude(),
+                            rating,
+                            name.getName()
+
+                            ).build()
+                            ,this);
 
 //                    Log.d("TAG","key: "+results.get(position).getKey());
                 }

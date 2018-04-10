@@ -126,26 +126,48 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/review_recycler"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@id/linear_review_container"
             android:paddingLeft="8dp"
-            android:paddingRight="8dp">
+            android:paddingRight="8dp"
+            android:orientation="horizontal">
 
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/review_recyclerView"
+            <TextView
+                android:id="@+id/rating_titles"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:maxLines="3"
+                android:minLines="1"
+                android:text="@string/rating_text"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/rating_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/toolbar"
-                tools:listitem="@layout/list_item_saved_menu">
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:textSize="18dp"
+                android:maxLines="3"
+                android:minLines="1"
+                android:textColor="@color/black"
+                android:text="data">
 
-            </android.support.v7.widget.RecyclerView>
 
 
-        </RelativeLayout>
+            </TextView>
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linear_address_container"

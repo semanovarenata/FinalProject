@@ -5,10 +5,10 @@
     <string name="detail_restaurant">Restaurant detail</string>
     <string name="saved_menu">Saved menu</string>
     <string name="daily_menu">Daily menu</string>
-    <string name="fav_restaurant">Favorite restaurantDB</string>
+    <string name="fav_restaurant">Favorite restaurant</string>
     <string name="save_menu">save menu</string>
     <string name="add_restaurant_to_favourite">Add restaurantDB to favourite</string>
-    <string name="review">Review</string>
+    <string name="review">User rating</string>
     <string name="address">Address</string>
     <string name="title_activity_main">MainActivity</string>
 
@@ -19,6 +19,7 @@
 
     <string name="API_KEY">AIzaSyCVlTNxabjH7L34ZJq8A9jVHODfdtDuqzQ</string>
     <string name="remove_from_favorite">Remove from favorite</string>
+    <string name="rating_text">Rating: \nRating text: \nVotes:</string>
 
 
 </resources>

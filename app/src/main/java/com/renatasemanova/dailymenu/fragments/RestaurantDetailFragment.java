@@ -1,6 +1,7 @@
 package com.renatasemanova.dailymenu.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.text.TextUtils;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,6 +17,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hannesdorfmann.fragmentargs.annotation.Arg;
 import com.hannesdorfmann.fragmentargs.annotation.FragmentWithArgs;
+import com.renatasemanova.dailymenu.API.model.UserRating;
 import com.renatasemanova.dailymenu.BaseFragment;
 import com.renatasemanova.dailymenu.DB.RestaurantDB;
 import com.renatasemanova.dailymenu.R;
@@ -53,6 +58,9 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     @Arg
     String restaurant_name;
 
+    @Arg
+    UserRating rating;
+
     @BindView(R.id.address)
     TextView addressText;
 
@@ -61,6 +69,9 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
     @BindView(R.id.remove_restaurant_button)
     Button remove_restaurant_button;
+
+    @BindView(R.id.rating_text)
+    TextView rating_data;
 
 
     private DatabaseReference mFirebaseDatabase;
@@ -87,6 +98,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         getRestaurantState();
         saveRestaurant();
         removeRestaurant();
+        showReview();
 
     }
 
@@ -97,9 +109,9 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
                     public void onDataChange(DataSnapshot snapshot) {
                         for (DataSnapshot item : snapshot.getChildren()) {
                             Timber.d("Found matching value in " + item.getKey());
-                            if(item.getKey().equals("restaurants")){
+                            if (item.getKey().equals("restaurants")) {
                                 for (DataSnapshot restaurants : item.getChildren()) {
-                                    if(restaurants != null && restaurants.getValue(RestaurantDB.class).restaurant.equals(restaurant_name)){
+                                    if (restaurants != null && restaurants.getValue(RestaurantDB.class).restaurant.equals(restaurant_name)) {
                                         save_restaurant_button.setVisibility(View.GONE);
                                         remove_restaurant_button.setVisibility(View.VISIBLE);
 
@@ -124,11 +136,47 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
     private void removeRestaurant() {
         remove_restaurant_button.setOnClickListener(new View.OnClickListener() {
+            DataSnapshot snapshot;
 
             @Override
             public void onClick(View view) {
+                showLoading();
+                FirebaseDatabase.getInstance().getReference()
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            public void onDataChange(DataSnapshot snapshot) {
+                                for (DataSnapshot item : snapshot.getChildren()) {
+                                    Timber.d("Found matching value in " + item.getKey());
+                                    if (item.getKey().equals("restaurants")) {
+                                        for (DataSnapshot restaurants : item.getChildren()) {
+                                            if (restaurants != null && restaurants.getValue(RestaurantDB.class).restaurant.equals(restaurant_name)) {
 
-   
+                                                restaurants.getRef().removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        hideLoading();
+                                                        if (task.isSuccessful()) {
+                                                            save_restaurant_button.setVisibility(View.VISIBLE);
+                                                            remove_restaurant_button.setVisibility(View.GONE);
+                                                            Toast.makeText(getContext(), "REMOVED", Toast.LENGTH_SHORT).show();
+                                                        } else {
+                                                            Toast.makeText(getContext(), "NOT WORKING", Toast.LENGTH_SHORT).show();
+
+                                                        }
+                                                    }
+                                                });
+
+                                            }
+                                        }
+                                    }
+                                    hideLoading();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
 
                 save_restaurant_button.setVisibility(View.VISIBLE);
                 remove_restaurant_button.setVisibility(View.GONE);
@@ -225,6 +273,10 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         });
     }
 
+
+    public void showReview(){
+        rating_data.setText(rating.toString());
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

@@ -3,7 +3,9 @@ package com.renatasemanova.dailymenu.API.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserRating {
+import java.io.Serializable;
+
+public class UserRating implements Serializable{
 
     @SerializedName("aggregate_rating")
     @Expose
@@ -50,6 +52,13 @@ public class UserRating {
         this.votes = votes;
     }
 
+
+    @Override
+    public String toString() {
+        return  aggregateRating + '\n' +
+                ratingText + '\n' +
+                votes + '\'';
+    }
 }
 
 
