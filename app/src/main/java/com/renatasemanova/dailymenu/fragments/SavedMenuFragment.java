@@ -18,7 +18,7 @@ public class SavedMenuFragment extends BaseFragment{
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
-        getActivity().setTitle(R.string.saved_menu);
+        ((FirstActivity)baseActivity).enableViews(false);
 
     }
 
@@ -27,4 +27,10 @@ public class SavedMenuFragment extends BaseFragment{
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        baseActivity.getSupportActionBar().setTitle(R.string.saved_menu);
+
+    }
 }

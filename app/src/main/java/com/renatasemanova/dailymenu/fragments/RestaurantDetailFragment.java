@@ -1,5 +1,9 @@
 package com.renatasemanova.dailymenu.fragments;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,6 +34,7 @@ import com.renatasemanova.dailymenu.API.model.UserRating;
 import com.renatasemanova.dailymenu.BaseFragment;
 import com.renatasemanova.dailymenu.DB.RestaurantDB;
 import com.renatasemanova.dailymenu.R;
+import com.renatasemanova.dailymenu.widget.ListWidgetProvider;
 
 import java.util.Random;
 
@@ -43,7 +48,6 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
 
     private GoogleMap mMap;
-
 
     @Arg
     String address;
@@ -72,6 +76,12 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     @BindView(R.id.remove_restaurant_button)
     Button remove_restaurant_button;
 
+    @BindView(R.id.save_menu_button)
+    Button save_menu_button;
+
+    @BindView(R.id.save_menu_button_done)
+    Button save_menu_button_done;
+
     @BindView(R.id.rating_text)
     TextView rating_data;
 
@@ -91,7 +101,6 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     protected void init(@Nullable Bundle savedInstanceState) {
         ((FirstActivity) getActivity()).getDrawer().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
 
-        getActivity().setTitle(restaurant_name);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -101,8 +110,12 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         saveRestaurant();
         removeRestaurant();
         showReview();
+        saveMenu();
+
+        ((FirstActivity) baseActivity).enableViews(true);
 
     }
+
     public static final String[] DAILY_MENU = {
             "Slepačia s cestovinou a zeleninou \nFajítas z hovädzej sviečkovice podávaný na panvičke s tortillou a zemiakovými hranolčekmi /1,6/ 7,70 € \nGreen lady pizza /1,3,7/ 4,60 €",
             "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 ",
@@ -113,7 +126,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     };
 
     public static String getRandomMenu() {
-        return DAILY_MENU[new Random().nextInt(DAILY_MENU.length -1)];
+        return DAILY_MENU[new Random().nextInt(DAILY_MENU.length - 1)];
     }
 
     private void getRestaurantState() {
@@ -199,11 +212,14 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         });
     }
 
+
+
     private void saveRestaurant() {
         // Save / update the restaurant
         save_restaurant_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mFirebaseDatabase = mFirebaseInstance.getReference("restaurants");
 
                 if (TextUtils.isEmpty(restaurant_id)) {
                     createRestaurant(restaurant_name, id);
@@ -217,11 +233,27 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         });
     }
 
+    private void saveMenu() {
+        save_menu_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mFirebaseDatabase = mFirebaseInstance.getReference("menu");
+
+                createRestaurant(restaurant_name, id);
+
+                save_menu_button.setVisibility(View.GONE);
+                save_menu_button_done.setVisibility(View.VISIBLE);
+            }
+        });
+
+    }
+
     private void initializeDB() {
         //DATABASE
         mFirebaseInstance = FirebaseDatabase.getInstance();
         // get reference to 'restaurant' node
         mFirebaseDatabase = mFirebaseInstance.getReference("restaurants");
+
         // store app title to 'app_title' node
         mFirebaseInstance.getReference("app_title").setValue("Daily Menu");
 
@@ -244,25 +276,45 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         });
     }
 
-    /**
-     * Creating new user node under 'users'
-     */
+    private void initializeMenuDB() {
+        //DATABASE
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        // get reference to 'restaurant' node
+        mFirebaseDatabase = mFirebaseInstance.getReference("menu");
+
+        // store app title to 'app_title' node
+        mFirebaseInstance.getReference("app_title").setValue("Daily Menu");
+
+        // app_title change listener
+        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // update toolbar title
+                if (baseActivity.getSupportActionBar() != null) {
+                    baseActivity.getSupportActionBar().setTitle(restaurant_name);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.e(TAG, "Failed to read app title value.", error.toException());
+            }
+        });
+    }
+
     private void createRestaurant(String id, String restaurant_name) {
         if (TextUtils.isEmpty(restaurant_id)) {
             restaurant_id = mFirebaseDatabase.push().getKey();
         }
 
         RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name, address, latitude, longitude, rating);
-
         mFirebaseDatabase.child(restaurant_id).setValue(restaurantDB);
-
         addUserChangeListener();
     }
 
 
-    /**
-     * User data change listener
-     */
     private void addUserChangeListener() {
         // User data change listener
         mFirebaseDatabase.child(restaurant_id).addValueEventListener(new ValueEventListener() {
@@ -272,7 +324,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
                 // Check for null
                 if (restaurantDB == null) {
-                    Log.e(TAG, "User data is null!");
+                    Log.e(TAG, "Menu data is null!");
                     return;
                 }
 
@@ -305,4 +357,21 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     }
 
 
+    private void updateWidget(final Context context) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+                intent.setComponent(new ComponentName(context, ListWidgetProvider.class));
+                context.sendBroadcast(intent);
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        baseActivity.getSupportActionBar().setTitle(R.string.save_menu);
+
+    }
 }

@@ -37,9 +37,9 @@ public class FirstFragmentParent extends BaseFragment {
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
-        getActivity().setTitle(R.string.find_restaurant);
         userInput();
         search(text);
+        ((FirstActivity)baseActivity).enableViews(false);
     }
 
     @Override
@@ -90,6 +90,7 @@ public class FirstFragmentParent extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
+        baseActivity.getSupportActionBar().setTitle(R.string.find_restaurant);
         ((FirstActivity) getActivity()).getDrawer().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
     }
 }

@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.renatasemanova.dailymenu.BaseActivity;
 import com.renatasemanova.dailymenu.R;
@@ -16,6 +17,8 @@ public class FirstActivity extends BaseActivity {
 
 
     private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
+    private Toolbar toolbar;
 
     @Override
     public void onBackPressed() {
@@ -33,14 +36,18 @@ public class FirstActivity extends BaseActivity {
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
@@ -69,10 +76,38 @@ public class FirstActivity extends BaseActivity {
 
     }
 
-    public DrawerLayout getDrawer(){
+    private boolean mToolBarNavigationListenerIsRegistered = false;
+
+    public void enableViews(boolean enable) {
+
+        if(enable) {
+            toggle.setDrawerIndicatorEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            if(!mToolBarNavigationListenerIsRegistered) {
+                toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onBackPressed();
+                    }
+                });
+                mToolBarNavigationListenerIsRegistered = true;
+            }
+
+        } else {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            toggle.setDrawerIndicatorEnabled(true);
+            toggle.setToolbarNavigationClickListener(null);
+            mToolBarNavigationListenerIsRegistered = false;
+        }
+    }
+
+    public DrawerLayout getDrawer() {
         return this.drawer;
     }
 
+    public ActionBarDrawerToggle getToggle() {
+        return this.toggle;
+    }
 
 
 }
