@@ -31,6 +31,8 @@ import com.renatasemanova.dailymenu.BaseFragment;
 import com.renatasemanova.dailymenu.DB.RestaurantDB;
 import com.renatasemanova.dailymenu.R;
 
+import java.util.Random;
+
 import butterknife.BindView;
 import timber.log.Timber;
 
@@ -76,8 +78,8 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
-
     private String restaurant_id;
+    private static final Random random = new Random();
 
 
     @Override
@@ -100,6 +102,18 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         removeRestaurant();
         showReview();
 
+    }
+    public static final String[] DAILY_MENU = {
+            "Slepačia s cestovinou a zeleninou \nFajítas z hovädzej sviečkovice podávaný na panvičke s tortillou a zemiakovými hranolčekmi /1,6/ 7,70 € \nGreen lady pizza /1,3,7/ 4,60 €",
+            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 ",
+            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
+            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
+            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
+            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
+    };
+
+    public static String getRandomMenu() {
+        return DAILY_MENU[new Random().nextInt(DAILY_MENU.length -1)];
     }
 
     private void getRestaurantState() {
@@ -238,7 +252,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
             restaurant_id = mFirebaseDatabase.push().getKey();
         }
 
-        RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name, address,latitude,longitude,rating);
+        RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name, address, latitude, longitude, rating);
 
         mFirebaseDatabase.child(restaurant_id).setValue(restaurantDB);
 
@@ -274,9 +288,10 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     }
 
 
-    public void showReview(){
+    public void showReview() {
         rating_data.setText(rating.toString());
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -288,4 +303,6 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         googleMap.getUiSettings().setScrollGesturesEnabled(false);
         googleMap.getUiSettings().setZoomGesturesEnabled(false);
     }
+
+
 }

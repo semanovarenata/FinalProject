@@ -10,7 +10,36 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "default"
     }
+
+    signingConfigs {
+        paidRelease {
+            storeFile file("..\\keystore")
+            storePassword "mypass"
+            keyAlias "keystore"
+            keyPassword "mypass"
+        }
+        freeRelease {
+            storeFile file("..\\keystore")
+            storePassword "mypass"
+            keyAlias "keystore"
+            keyPassword "mypass"
+        }
+    }
+
+    productFlavors{
+        free {
+            applicationIdSuffix ".free"
+            versionName "1.0-free"
+        }
+
+        paid {
+            applicationIdSuffix ".paid"
+            versionName "1.0-paid"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -70,6 +99,7 @@ dependencies {
 
     //maps
     compile 'com.google.android.gms:play-services-maps:12.0.1'
+    implementation 'com.google.android.gms:play-services-ads:12.0.1'
 
 
 }

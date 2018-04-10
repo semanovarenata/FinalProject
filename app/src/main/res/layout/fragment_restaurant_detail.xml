@@ -129,7 +129,7 @@
         <LinearLayout
             android:id="@+id/review_recycler"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linear_review_container"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
