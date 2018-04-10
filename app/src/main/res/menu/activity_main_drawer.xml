@@ -7,11 +7,11 @@
         <item
             android:id="@+id/find_restaurant"
             android:icon="@mipmap/ic_search"
-            android:title="Find restaurant" />
+            android:title="Find restaurantDB" />
         <item
             android:id="@+id/favorite_restaurant"
             android:icon="@mipmap/ic_favorite"
-            android:title="Favorite restaurant" />
+            android:title="Favorite restaurantDB" />
         <item
             android:id="@+id/saved_menu"
             android:icon="@mipmap/ic_restaurant"

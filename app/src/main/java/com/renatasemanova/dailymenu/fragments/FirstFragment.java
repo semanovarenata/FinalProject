@@ -29,7 +29,6 @@ public class FirstFragment extends BaseFragment {
     SearchView searchView;
 
     public String text;
-
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_search_restaurant;
@@ -40,6 +39,8 @@ public class FirstFragment extends BaseFragment {
         getActivity().setTitle(R.string.find_restaurant);
         userInput();
         search(text);
+
+
     }
 
     @Override

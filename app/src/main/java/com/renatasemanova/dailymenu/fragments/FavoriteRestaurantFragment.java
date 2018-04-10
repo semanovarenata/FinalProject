@@ -27,4 +27,6 @@ public class FavoriteRestaurantFragment extends BaseFragment{
         super.onCreate(savedInstanceState);
     }
 
+
+
 }

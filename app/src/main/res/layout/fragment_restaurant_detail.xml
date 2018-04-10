@@ -85,7 +85,22 @@
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
                 android:text="@string/add_restaurant_to_favourite"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:visibility="visible"/>
+
+
+            <Button
+                android:id="@+id/remove_restaurant_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/remove_from_favorite"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
