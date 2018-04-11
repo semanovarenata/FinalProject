@@ -100,7 +100,7 @@ public class FirstFragmentParent extends BaseFragment {
     }
 
     public void search(String text) {
-//        showLoading();
+        showLoading();
         ApiUtils.getZomatoApi().searchRestaurant(text).enqueue(new Callback<Search>() {
             @Override
             public void onResponse(Call<Search> call, Response<Search> response) {
@@ -113,7 +113,7 @@ public class FirstFragmentParent extends BaseFragment {
 
             @Override
             public void onFailure(Call<Search> call, Throwable t) {
-
+                hideLoading();
             }
         });
 

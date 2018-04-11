@@ -55,7 +55,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void changeTo(BaseFragment fragment) {
         changeTo(fragment, null);
-//        showArrow(false);
     }
 
     public void changeTo(BaseFragment fragment, String tag) {

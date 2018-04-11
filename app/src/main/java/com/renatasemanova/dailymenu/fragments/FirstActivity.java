@@ -69,7 +69,6 @@ public class FirstActivity extends BaseActivity {
         AlarmManager myAlarm = (AlarmManager) getSystemService(ALARM_SERVICE);
         myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, start, AlarmManager.INTERVAL_DAY, pIntent);
 
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(
@@ -92,11 +91,7 @@ public class FirstActivity extends BaseActivity {
                         return true;
                     }
                 });
-
-        if (savedInstanceState == null) {
-            changeTo(new FirstFragmentBuilder().build());
-        }
-
+        changeTo(new FirstFragmentBuilder().build());
     }
 
     private boolean mToolBarNavigationListenerIsRegistered = false;
@@ -131,6 +126,5 @@ public class FirstActivity extends BaseActivity {
     public ActionBarDrawerToggle getToggle() {
         return this.toggle;
     }
-
 
 }

@@ -26,7 +26,7 @@
     <string name="new_menu_notification">New menu for today</string>
     <string name="no_internet_connection">NO INTERNET CONNECTION</string>
     <string name="saved">Saved</string>
-    <string name="location">LOCATION</string>
+    <string name="location">Location</string>
 
 
 </resources>

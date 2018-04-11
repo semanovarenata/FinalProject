@@ -13,17 +13,10 @@ import android.view.ViewGroup;
 import com.hannesdorfmann.fragmentargs.FragmentArgs;
 
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 public abstract class BaseFragment extends Fragment {
 
     public BaseActivity baseActivity;
-    private Unbinder unbinder = null;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Nullable
     @Override
