@@ -30,4 +30,27 @@
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
+    <style name="Title"  >
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">28dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="TextView"  >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+
+    <style name="TextViewMenu"  >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+
 </resources>

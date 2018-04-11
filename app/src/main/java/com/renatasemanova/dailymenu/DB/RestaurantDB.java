@@ -15,18 +15,20 @@ public class RestaurantDB {
     public String latitude;
     public String longitude;
     public UserRating rating;
+    public String dailyMenu;
 
 
     public RestaurantDB(){
 
     }
 
-    public RestaurantDB(String restaurant,String id, String address, String latitude, String longitude, UserRating rating){
+    public RestaurantDB(String restaurant,String id, String address, String latitude, String longitude, UserRating rating, String dailyMenu){
         this.restaurant = restaurant;
         this.id = id;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.rating = rating;
+        this.dailyMenu = dailyMenu;
     }
 }

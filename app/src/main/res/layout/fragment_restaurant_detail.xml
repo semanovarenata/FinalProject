@@ -26,29 +26,27 @@
                 android:id="@+id/Ingredients_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="30dp"
                 android:text="@string/daily_menu"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="26sp" />
+                style="@style/Title" />
 
         </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/menu_recycler"
+            android:id="@+id/menu_layout"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linear_buttons_layout"
             android:paddingLeft="8dp"
             android:paddingRight="8dp">
 
 
             <TextView
-                android:id="@+id/steps_recyclerView"
+
+                android:id="@+id/menu_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/toolbar"
-                tools:listitem="@layout/list_item_saved_menu">
+                style="@style/TextViewMenu"
+                android:layout_below="@id/toolbar">
 
             </TextView>
 
@@ -59,7 +57,7 @@
             android:id="@+id/button_container"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_below="@id/menu_recycler"
+            android:layout_below="@id/menu_layout"
             android:paddingStart="10dp"
             android:paddingTop="10dp">
 
@@ -131,11 +129,8 @@
                 android:id="@+id/review_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="30dp"
                 android:text="@string/review"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="26sp" />
+                style="@style/Title" />
 
         </LinearLayout>
 
@@ -153,9 +148,7 @@
                 android:id="@+id/rating_titles"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:paddingLeft="8dp"
-                android:paddingTop="8dp"
-                android:textSize="18dp"
+                style="@style/TextView"
                 android:textColor="@color/black"
                 android:maxLines="3"
                 android:minLines="1"
@@ -167,12 +160,9 @@
                 android:id="@+id/rating_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="8dp"
-                android:paddingTop="8dp"
-                android:textSize="18dp"
+                style="@style/TextView"
                 android:maxLines="3"
                 android:minLines="1"
-                android:textColor="@color/black"
                 android:text="data">
 
 
@@ -187,29 +177,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/review_recycler"
-            android:layout_alignParentLeft="true"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            >
 
             <TextView
                 android:id="@+id/address_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="30dp"
                 android:text="@string/address"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="26sp" />
+                style="@style/Title" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/address"
-                android:paddingTop="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="30dp"
-                android:textColor="@color/black"
+                style="@style/TextViewMenu"
                 android:text="tototototototoot"/>
 
         </LinearLayout>

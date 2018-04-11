@@ -67,6 +67,8 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     @Arg
     UserRating rating;
 
+    String dailyMenu;
+
     @BindView(R.id.address)
     TextView addressText;
 
@@ -85,6 +87,9 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     @BindView(R.id.rating_text)
     TextView rating_data;
 
+    @BindView(R.id.menu_text)
+    TextView menu_data;
+
 
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
@@ -100,11 +105,13 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
         ((FirstActivity) getActivity()).getDrawer().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        ((FirstActivity) baseActivity).enableViews(true);
 
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         addressText.setText(address);
+        dailyMenu();
         initializeDB();
         getRestaurantState();
         saveRestaurant();
@@ -112,21 +119,24 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         showReview();
         saveMenu();
 
-        ((FirstActivity) baseActivity).enableViews(true);
-
     }
 
     public static final String[] DAILY_MENU = {
-            "Slepačia s cestovinou a zeleninou \nFajítas z hovädzej sviečkovice podávaný na panvičke s tortillou a zemiakovými hranolčekmi /1,6/ 7,70 € \nGreen lady pizza /1,3,7/ 4,60 €",
+            "Slepačia s cestovinou a zeleninou \nFajítas z hovädzej sviečkovice podávaný na panvičke s tortillou a zemiakovými hranolčekmi /1,6/ 7,70 € ",
             "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 ",
-            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
-            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
-            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
-            "Šošovicová kyslá \nMorčacie RED-THAI-CURRY podávané s mrkvovo-ananásovým šalátikom/1,7/  4,90 €",
+            "Paradajková \nGreen lady pizza /1,3,7/ 4,10 €",
+            "Fazulová \nHawai pizza/1,7/  5,20 €",
+
     };
 
     public static String getRandomMenu() {
         return DAILY_MENU[new Random().nextInt(DAILY_MENU.length - 1)];
+    }
+
+
+    public void dailyMenu() {
+        menu_data.setText(getRandomMenu());
+        dailyMenu = getRandomMenu();
     }
 
     private void getRestaurantState() {
@@ -176,7 +186,6 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
                                     if (item.getKey().equals("restaurants")) {
                                         for (DataSnapshot restaurants : item.getChildren()) {
                                             if (restaurants != null && restaurants.getValue(RestaurantDB.class).restaurant.equals(restaurant_name)) {
-
                                                 restaurants.getRef().removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
@@ -212,7 +221,9 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         });
     }
 
+    private void removeDataFromMenu() {
 
+    }
 
     private void saveRestaurant() {
         // Save / update the restaurant
@@ -238,6 +249,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
             @Override
             public void onClick(View view) {
                 mFirebaseDatabase = mFirebaseInstance.getReference("menu");
+                mFirebaseDatabase.getRef().removeValue();
 
                 createRestaurant(restaurant_name, id);
 
@@ -309,7 +321,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
             restaurant_id = mFirebaseDatabase.push().getKey();
         }
 
-        RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name, address, latitude, longitude, rating);
+        RestaurantDB restaurantDB = new RestaurantDB(id, restaurant_name, address, latitude, longitude, rating, dailyMenu);
         mFirebaseDatabase.child(restaurant_id).setValue(restaurantDB);
         addUserChangeListener();
     }
