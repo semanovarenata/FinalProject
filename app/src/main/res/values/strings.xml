@@ -24,6 +24,8 @@
     <string name="rating_text">Rating: \nRating text: \nVotes:</string>
     <string name="alarm">ALARM</string>
     <string name="new_menu_notification">New menu for today</string>
+    <string name="no_internet_connection">NO INTERNET CONNECTION</string>
+    <string name="saved">Saved</string>
 
 
 </resources>

@@ -1,6 +1,7 @@
 package com.renatasemanova.dailymenu;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -9,6 +10,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+
+import com.pixplicity.easyprefs.library.Prefs;
 
 import activitystarter.ActivityStarter;
 import timber.log.Timber;
@@ -26,10 +29,20 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResId());
 
-        //TODO Parceler https://github.com/johncarl81/parceler
-        //TODO ActivityStarter https://github.com/MarcinMoskala/ActivityStarter
+        // Initialize the Prefs class
+        new Prefs.Builder()
+                .setContext(this)
+                .setMode(ContextWrapper.MODE_PRIVATE)
+                .setPrefsName(getPackageName())
+                .setUseDefaultSharedPreference(true)
+                .build();
+
+        //Parceler https://github.com/johncarl81/parceler
+        //ActivityStarter https://github.com/MarcinMoskala/ActivityStarter
         ActivityStarter.fill(this);
         init(savedInstanceState);
+
+
     }
 
     public void launchActivity(Intent intent, Boolean finishAll) {

@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,15 +31,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hannesdorfmann.fragmentargs.annotation.Arg;
 import com.hannesdorfmann.fragmentargs.annotation.FragmentWithArgs;
+import com.pixplicity.easyprefs.library.Prefs;
+import com.renatasemanova.dailymenu.API.ApiUtils;
+import com.renatasemanova.dailymenu.API.model.DailyMenu;
 import com.renatasemanova.dailymenu.API.model.UserRating;
 import com.renatasemanova.dailymenu.BaseFragment;
 import com.renatasemanova.dailymenu.DB.RestaurantDB;
 import com.renatasemanova.dailymenu.R;
 import com.renatasemanova.dailymenu.widget.ListWidgetProvider;
 
+import java.io.IOException;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import butterknife.BindView;
+import retrofit2.Call;
+import retrofit2.Response;
 import timber.log.Timber;
 
 import static android.content.ContentValues.TAG;
@@ -46,6 +55,7 @@ import static android.content.ContentValues.TAG;
 @FragmentWithArgs
 public class RestaurantDetailFragment extends BaseFragment implements OnMapReadyCallback {
 
+    public static final String MENU = "MENU";
 
     private GoogleMap mMap;
 
@@ -89,6 +99,9 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
     @BindView(R.id.menu_text)
     TextView menu_data;
+
+
+    Set<String> menuWidget = new HashSet<>();
 
 
     private DatabaseReference mFirebaseDatabase;
@@ -135,8 +148,8 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
 
     public void dailyMenu() {
-        menu_data.setText(getRandomMenu());
-        dailyMenu = getRandomMenu();
+        final Call<DailyMenu> call = ApiUtils.getZomatoApi().dailyMenu(Integer.parseInt(id));
+        new NetworkCall().execute(call);
     }
 
     private void getRestaurantState() {
@@ -221,10 +234,6 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         });
     }
 
-    private void removeDataFromMenu() {
-
-    }
-
     private void saveRestaurant() {
         // Save / update the restaurant
         save_restaurant_button.setOnClickListener(new View.OnClickListener() {
@@ -255,9 +264,16 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
 
                 save_menu_button.setVisibility(View.GONE);
                 save_menu_button_done.setVisibility(View.VISIBLE);
+                addToWidget();
+
             }
         });
 
+    }
+
+    public void addToWidget() {
+        Prefs.putOrderedStringSet(MENU, menuWidget);
+        updateWidget(baseActivity);
     }
 
     private void initializeDB() {
@@ -274,7 +290,7 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // update toolbar title
-                if (baseActivity.getSupportActionBar() != null) {
+                if (baseActivity != null && baseActivity.getSupportActionBar() != null) {
                     baseActivity.getSupportActionBar().setTitle(restaurant_name);
 
                 }
@@ -385,5 +401,28 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         super.onResume();
         baseActivity.getSupportActionBar().setTitle(R.string.save_menu);
 
+    }
+
+    private class NetworkCall extends AsyncTask<Call, Void, String> {
+        @Override
+        protected String doInBackground(Call... params) {
+            try {
+                Call<DailyMenu> call = params[0];
+                Response<DailyMenu> response = call.execute();
+                return response.body().toString();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            //API RETURNS EMPTY RESPONSE(backend issue), SO GENERATING RANDOM ONE
+            dailyMenu = getRandomMenu();
+            menu_data.setText(dailyMenu);
+            menuWidget.add(dailyMenu);
+
+        }
     }
 }

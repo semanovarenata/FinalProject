@@ -14,10 +14,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import static com.renatasemanova.dailymenu.widget.ListWidgetService.DAILY_MENU;
+
+import static com.renatasemanova.dailymenu.widget.ListWidgetService.MENU;
 
 public class ListWidgetService extends RemoteViewsService {
-    public static final String DAILY_MENU = "DAILY_MENU";
+    public static final String MENU = "MENU";
 
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
@@ -29,7 +30,7 @@ public class ListWidgetService extends RemoteViewsService {
                 .setUseDefaultSharedPreference(true)
                 .build();
 
-        return new AppWidgetListView(this, Prefs.getOrderedStringSet(DAILY_MENU, Collections.<String>emptySet()));
+        return new AppWidgetListView(this, Prefs.getOrderedStringSet(MENU, Collections.emptySet()));
     }
 }
 
@@ -51,7 +52,7 @@ class AppWidgetListView implements RemoteViewsService.RemoteViewsFactory {
     @Override
     public void onDataSetChanged() {
         Log.d("LISTEIDGET", "UPDATED");
-        this.dataList = new ArrayList<>(Prefs.getOrderedStringSet(DAILY_MENU, Collections.<String>emptySet()));
+        this.dataList = new ArrayList<>(Prefs.getOrderedStringSet(MENU, Collections.emptySet()));
     }
 
     @Override

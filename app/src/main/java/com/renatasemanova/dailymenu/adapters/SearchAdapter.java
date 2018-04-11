@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.renatasemanova.dailymenu.API.model.Location;
 import com.renatasemanova.dailymenu.API.model.Restaurant;
 import com.renatasemanova.dailymenu.API.model.Restaurant_;
-import com.renatasemanova.dailymenu.API.model.Search;
 import com.renatasemanova.dailymenu.API.model.UserRating;
 import com.renatasemanova.dailymenu.BaseActivity;
 import com.renatasemanova.dailymenu.R;
@@ -23,11 +22,11 @@ import butterknife.ButterKnife;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> {
 
     private BaseActivity activity;
-    private final Search search;
+    private final List<Restaurant> restaurants;
 
-    public SearchAdapter(BaseActivity activity, Search search) {
+    public SearchAdapter(BaseActivity activity, List<Restaurant> restaurants) {
         this.activity = activity;
-        this.search = search;
+        this.restaurants = restaurants;
     }
 
     @Override
@@ -40,12 +39,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     @Override
     public void onBindViewHolder(SearchViewHolder holder, int position) {
-        holder.bind(search.getRestaurants(), position);
+        holder.bind(restaurants, position);
     }
 
     @Override
     public int getItemCount() {
-        return search.getRestaurants().size();
+        return restaurants.size();
     }
 
     class SearchViewHolder extends RecyclerView.ViewHolder {

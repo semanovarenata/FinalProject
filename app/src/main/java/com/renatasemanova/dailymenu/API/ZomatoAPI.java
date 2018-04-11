@@ -1,5 +1,6 @@
 package com.renatasemanova.dailymenu.API;
 
+import com.renatasemanova.dailymenu.API.model.DailyMenu;
 import com.renatasemanova.dailymenu.API.model.Search;
 
 import retrofit2.Call;
@@ -16,7 +17,7 @@ public interface ZomatoAPI {
     Call<Search> searchRestaurant(@Query("q") String restaurant);
 
     @GET("dailymenu")
-    Call<Search> dailyMenu(@Query("res_id") Integer res_id);
+    Call<DailyMenu> dailyMenu(@Query("res_id") Integer res_id);
 
 
 }

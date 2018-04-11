@@ -4,6 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -17,10 +23,17 @@ import butterknife.BindView;
 import timber.log.Timber;
 
 @FragmentWithArgs
-public class SavedMenuFragment extends BaseFragment{
+public class SavedMenuFragment extends BaseFragment {
 
     @BindView(R.id.saved_menu)
     TextView saved_menu;
+
+    @BindView(R.id.restaurant_title)
+    TextView restaurant_title;
+
+    String latitude, longitude;
+
+
 
     @Override
     protected int getLayoutResId() {
@@ -29,7 +42,8 @@ public class SavedMenuFragment extends BaseFragment{
 
     @Override
     protected void init(@Nullable Bundle savedInstanceState) {
-        ((FirstActivity)baseActivity).enableViews(false);
+        ((FirstActivity) baseActivity).enableViews(false);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
 
         showLoading();
         FirebaseDatabase.getInstance().getReference()
@@ -44,9 +58,19 @@ public class SavedMenuFragment extends BaseFragment{
                                             @Override
                                             public void onDataChange(DataSnapshot dataSnapshot) {
                                                 RestaurantDB post = dataSnapshot.getValue(RestaurantDB.class);
-                                                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + post.restaurant);
+                                                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + post.dailyMenu);
+                                                restaurant_title.setText(post.restaurant);
+                                                saved_menu.setText(post.dailyMenu);
 
+                                                latitude = post.latitude;
+                                                longitude = post.longitude;
 
+                                                mapFragment.getMapAsync(new OnMapReadyCallback() {
+                                                    @Override
+                                                    public void onMapReady(GoogleMap googleMap) {
+                                                        SavedMenuFragment.this.onMapReady(googleMap);
+                                                    }
+                                                });
 
                                             }
 
@@ -75,6 +99,17 @@ public class SavedMenuFragment extends BaseFragment{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng address = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+
+        googleMap.addMarker(new MarkerOptions().position(address)
+                .title("Address"));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(address, 15.0f));
+        googleMap.getUiSettings().setScrollGesturesEnabled(false);
+        googleMap.getUiSettings().setZoomGesturesEnabled(false);
+    }
+
 
     @Override
     public void onResume() {

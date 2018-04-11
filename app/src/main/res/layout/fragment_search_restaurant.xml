@@ -15,7 +15,6 @@
             android:id="@+id/anchor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:nestedScrollingEnabled="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <RelativeLayout
@@ -26,31 +25,50 @@
                     android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginBottom="20dp" />
 
-
-                <SearchView
+                <android.support.design.widget.TextInputLayout
                     android:id="@+id/search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                    android:background="#fff"
-                    android:elevation="2dp"
-                    android:queryHint="Search Here"
                     android:layout_below="@id/image"
-                    android:textSize="@dimen/detail_body_text_size" />
+                    android:layout_margin="16dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Search"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp" />
+
+                </android.support.design.widget.TextInputLayout>
 
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view"
-                    android:layout_margin="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/search"
+                    android:layout_margin="16dp"
                     android:paddingLeft="@dimen/list_side_margin"
                     android:paddingRight="@dimen/list_side_margin"
-                    android:scrollbarStyle="outsideOverlay" />
+                    android:scrollbarStyle="outsideOverlay"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/textview_connection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/search"
+                    android:layout_margin="16dp"
+                    android:paddingLeft="@dimen/list_side_margin"
+                    android:paddingRight="@dimen/list_side_margin"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:text="@string/no_internet_connection"
+                    android:textSize="18sp"
+                    android:gravity="center"/>
 
 
             </RelativeLayout>
@@ -58,14 +76,14 @@
 
         </ScrollView>
 
-                <com.google.android.gms.ads.AdView
-                    android:id="@+id/adView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    ads:adSize="BANNER"
-                    ads:adUnitId="@string/banner_ad_unit_id" />
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" />
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
