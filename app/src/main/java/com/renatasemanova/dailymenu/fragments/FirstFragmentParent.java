@@ -73,8 +73,9 @@ public class FirstFragmentParent extends BaseFragment {
 
     public void loadImage() {
         Picasso.get()
-                .load(R.drawable.masala_cater_blur)
+                .load(R.drawable.energy_food)
                 .fit()
+                .centerCrop()
                 .into(image);
 
     }

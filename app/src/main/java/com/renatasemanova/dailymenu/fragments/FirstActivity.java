@@ -46,7 +46,7 @@ public class FirstActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        drawer = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -59,18 +59,15 @@ public class FirstActivity extends BaseActivity {
         cal.set(Calendar.SECOND, 0);
 
         long start = cal.getTimeInMillis();
-        if(cal.before(Calendar.getInstance())) {
-            start +=  AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+        if (cal.before(Calendar.getInstance())) {
+            start += AlarmManager.INTERVAL_FIFTEEN_MINUTES;
         }
 
         Intent mainIntent = new Intent(this, myReceiver.class);
         PendingIntent pIntent = PendingIntent.getBroadcast(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        AlarmManager myAlarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+        AlarmManager myAlarm = (AlarmManager) getSystemService(ALARM_SERVICE);
         myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, start, AlarmManager.INTERVAL_DAY, pIntent);
-
-
-
 
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -96,7 +93,9 @@ public class FirstActivity extends BaseActivity {
                     }
                 });
 
-        changeTo(new FirstFragmentBuilder().build());
+        if (savedInstanceState == null) {
+            changeTo(new FirstFragmentBuilder().build());
+        }
 
     }
 
@@ -104,10 +103,10 @@ public class FirstActivity extends BaseActivity {
 
     public void enableViews(boolean enable) {
 
-        if(enable) {
+        if (enable) {
             toggle.setDrawerIndicatorEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            if(!mToolBarNavigationListenerIsRegistered) {
+            if (!mToolBarNavigationListenerIsRegistered) {
                 toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

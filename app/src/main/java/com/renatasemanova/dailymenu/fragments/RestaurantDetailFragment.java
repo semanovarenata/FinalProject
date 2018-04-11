@@ -120,7 +120,6 @@ public class RestaurantDetailFragment extends BaseFragment implements OnMapReady
         ((FirstActivity) getActivity()).getDrawer().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         ((FirstActivity) baseActivity).enableViews(true);
 
-
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         addressText.setText(address);
