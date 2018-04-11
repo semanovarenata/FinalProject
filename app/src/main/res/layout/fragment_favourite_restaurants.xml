@@ -7,8 +7,7 @@
             android:id="@+id/recycler_view_favourite_restaurants"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/list_side_margin"
-            android:paddingRight="@dimen/list_side_margin"
+            android:layout_margin="10dp"
             android:scrollbarStyle="outsideOverlay" />
 
 

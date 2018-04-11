@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/widget"
     android:layout_width="match_parent"
@@ -14,9 +14,9 @@
         android:paddingBottom="8dp">
 
         <TextView
-            style="@style/WidgetTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            style="@style/WidgetTitle"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/daily_menu"
@@ -25,9 +25,10 @@
 
     <ListView
         android:id="@+id/widget_listView"
-        style="@style/WidgetData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        style="@style/WidgetData"
+        android:layout_gravity="start"
         tools:listitem="@layout/list_widget_row">
 
     </ListView>
