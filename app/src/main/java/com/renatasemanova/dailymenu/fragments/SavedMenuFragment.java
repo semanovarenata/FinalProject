@@ -34,7 +34,6 @@ public class SavedMenuFragment extends BaseFragment {
     String latitude, longitude;
 
 
-
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_saved_menu;

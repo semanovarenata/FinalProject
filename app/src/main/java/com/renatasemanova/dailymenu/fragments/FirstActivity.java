@@ -91,7 +91,9 @@ public class FirstActivity extends BaseActivity {
                         return true;
                     }
                 });
-        changeTo(new FirstFragmentBuilder().build());
+        if (savedInstanceState == null) {
+            changeTo(new FirstFragmentBuilder().build());
+        }
     }
 
     private boolean mToolBarNavigationListenerIsRegistered = false;
