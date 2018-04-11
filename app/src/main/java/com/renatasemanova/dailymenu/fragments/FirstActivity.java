@@ -15,7 +15,7 @@ import android.view.View;
 
 import com.renatasemanova.dailymenu.BaseActivity;
 import com.renatasemanova.dailymenu.R;
-import com.renatasemanova.dailymenu.service.NotifyService;
+import com.renatasemanova.dailymenu.service.myReceiver;
 
 import java.util.Calendar;
 
@@ -52,18 +52,22 @@ public class FirstActivity extends BaseActivity {
         toggle.syncState();
 
 
-        Intent myIntent = new Intent(this , NotifyService.class);
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-        PendingIntent pendingIntent = PendingIntent.getService(this, 0, myIntent, 0);
+        Calendar cal = Calendar.getInstance();
+        // it is set to 10.30
+        cal.set(Calendar.HOUR, 10);
+        cal.set(Calendar.MINUTE, 53);
+        cal.set(Calendar.SECOND, 0);
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.HOUR, 0);
-        calendar.set(Calendar.AM_PM, Calendar.AM);
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        long start = cal.getTimeInMillis();
+        if(cal.before(Calendar.getInstance())) {
+            start +=  AlarmManager.INTERVAL_FIFTEEN_MINUTES;
+        }
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 1000*60*60*24 , pendingIntent);
+        Intent mainIntent = new Intent(this, myReceiver.class);
+        PendingIntent pIntent = PendingIntent.getBroadcast(this, 0, mainIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager myAlarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+        myAlarm.setRepeating(AlarmManager.RTC_WAKEUP, start, AlarmManager.INTERVAL_DAY, pIntent);
 
 
 

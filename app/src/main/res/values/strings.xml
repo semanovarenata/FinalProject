@@ -22,6 +22,8 @@
 
     <string name="remove_from_favorite">Remove from favorite</string>
     <string name="rating_text">Rating: \nRating text: \nVotes:</string>
+    <string name="alarm">ALARM</string>
+    <string name="new_menu_notification">New menu for today</string>
 
 
 </resources>

@@ -11,23 +11,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6bef2d-d601-4b3b-844f-5b24c93618f3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/DatabaseRestaurant.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/adapters/DatabaseRestaurantAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_alarm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_alarm_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_alarm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_alarm_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_alarm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_alarm_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_alarm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_alarm_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_alarm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_alarm_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myAlarmService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myReceiver.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/SavedMenuFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/SavedMenuFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_restaurant_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_restaurant_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_saved_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_saved_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,23 +79,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_restaurant_detail.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_restaurant_detail.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="124" column="28" lean-forward="false" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
-              <folding>
-                <element signature="e#4171#4201#0" expanded="true" />
-                <element signature="e#4889#4905#0" expanded="true" />
-                <element signature="e#6675#6692#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,45 +89,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirstActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java">
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-321">
-              <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestaurantDetailFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="101" column="45" lean-forward="false" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestaurantDB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="139" lean-forward="false" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="139" />
+            <state relative-caret-position="375">
+              <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotifyService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java">
+      <file leaf-file-name="FirstActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+            <state relative-caret-position="297">
+              <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myAlarmService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myAlarmService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#519#520#0" expanded="true" />
+                <element signature="e#546#547#0" expanded="true" />
+                <element signature="e#1426#1451#0" expanded="true" />
+                <element signature="e#1486#1514#0" expanded="true" />
+                <element signature="e#1548#1589#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -3353,8 +3361,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/Restaurant_.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/Search.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/Restaurant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/RetrofitClient.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
@@ -3384,7 +3390,6 @@
         <option value="$PROJECT_DIR$/app/src/free/java/com/renatasemanova/dailymenu/fragments/FirstFragment.java" />
         <option value="$PROJECT_DIR$/app/src/paid/java/com.renatasemanova.dailymenu/fragments/FirstFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/list_widget_provider_info.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_favourite_restaurants.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/adapters/FirebaseRecyclerdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/adapters/FirebaseRecyclerAdapter.java" />
@@ -3398,12 +3403,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/DatabaseRestaurant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/adapters/DatabaseRestaurantAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_restaurant_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myReceiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myAlarmService.java" />
       </list>
     </option>
   </component>
@@ -4055,7 +4063,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="ce031713f9c63c3e0d" />
-    <property name="SearchEverywhereHistoryKey" value="style&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/styles.xml&#10;de&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java&#10;fav&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java&#10;first&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/free/java/com/renatasemanova/dailymenu/fragments/FirstFragment.java&#10;manif&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml&#10;list&#9;PSI&#9;JAVA://com.renatasemanova.dailymenu.widget.ListWidgetService&#10;deta&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java&#10;buil&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/build.gradle&#10;mani&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml&#10;stri&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/strings.xml&#10;strin&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/strings.xml&#10;rest&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java&#10;json&#9;FILE&#9;file:///Users/renata.semanova/Library/Preferences/AndroidStudio3.0/scratches/scratch.json&#10;adap&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/adapters/SearchAdapter.java&#10;ada&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/adapters/SearchAdapter.java&#10;main&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/menu/activity_main_drawer.xml&#10;acti&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java&#10;bui&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/build.gradle&#10;gra&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/build.gradle&#10;grad&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/settings.gradle&#10;FirstFragment&#9;PSI&#9;JAVA://com.renatasemanova.dailymenu.fragments.FirstFragmentBuilder&#10;manife&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml&#10;build.gr&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/build.gradle&#10;colo&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/colors.xml&#10;styl&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/styles.xml&#10;ani&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml" />
+    <property name="SearchEverywhereHistoryKey" value="manife&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml&#10;style&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/styles.xml&#10;de&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java&#10;fav&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java&#10;first&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/free/java/com/renatasemanova/dailymenu/fragments/FirstFragment.java&#10;manif&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml&#10;list&#9;PSI&#9;JAVA://com.renatasemanova.dailymenu.widget.ListWidgetService&#10;deta&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java&#10;buil&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/build.gradle&#10;mani&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml&#10;stri&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/strings.xml&#10;strin&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/strings.xml&#10;rest&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java&#10;json&#9;FILE&#9;file:///Users/renata.semanova/Library/Preferences/AndroidStudio3.0/scratches/scratch.json&#10;adap&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/adapters/SearchAdapter.java&#10;ada&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/adapters/SearchAdapter.java&#10;main&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/menu/activity_main_drawer.xml&#10;acti&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java&#10;bui&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/build.gradle&#10;gra&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/build.gradle&#10;grad&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/settings.gradle&#10;FirstFragment&#9;PSI&#9;JAVA://com.renatasemanova.dailymenu.fragments.FirstFragmentBuilder&#10;build.gr&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/build.gradle&#10;colo&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/colors.xml&#10;styl&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/res/values/styles.xml&#10;ani&#9;FILE&#9;file:///Users/renata.semanova/Desktop/Repos/NanodegreeUdacity/FinalProject/app/src/main/AndroidManifest.xml" />
     <property name="DEBUGGABLE_DEVICE" value="samsung-sm_g950f-ce031713f9c63c3e0d" />
     <property name="DEBUGGABLE_PROCESS" value="com.renatasemanova.dailymenu.paid" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -4177,7 +4185,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523434536925" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523436935249" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -4225,7 +4233,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523434536926" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523436935249" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -4408,7 +4416,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523434536928" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1523436935250" />
       </method>
     </configuration>
     <list size="1">
@@ -4470,7 +4478,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32481363" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32481363" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -4522,28 +4530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-database-12.0.1.aar/f9ff3916a9030e59409f940b930a0a5a/jars/classes.jar!/com/google/firebase/database/FirebaseDatabase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="97" column="29" lean-forward="false" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/os/Binder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/os/Handler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/adapters/FavoriteRestaurantAdapter.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -4654,17 +4640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/free/java/com/renatasemanova/dailymenu/fragments/FirstFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -4731,14 +4706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4843,16 +4810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-321">
-          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a900bd7de5bd3ddd2018e793a0d83409/res/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -4883,48 +4840,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/DB/RestaurantDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="24" column="139" lean-forward="false" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="139" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="101" column="45" lean-forward="false" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/DatabaseRestaurant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4941,12 +4861,122 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="124" column="28" lean-forward="false" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
+        <state relative-caret-position="322">
+          <caret line="134" column="23" lean-forward="true" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
           <folding>
             <element signature="e#4171#4201#0" expanded="true" />
             <element signature="e#4889#4905#0" expanded="true" />
             <element signature="e#6675#6692#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/RestaurantDetailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="101" column="45" lean-forward="false" selection-start-line="101" selection-start-column="45" selection-end-line="101" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/NotifyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/AlarmManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/java/util/Calendar.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="75" column="27" lean-forward="false" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+          <folding>
+            <element signature="e#2802#2803#0" expanded="true" />
+            <element signature="e#2853#2854#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FavoriteRestaurantFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/API/model/DatabaseRestaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/fragments/FirstActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/renatasemanova/dailymenu/service/myAlarmService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#1426#1451#0" expanded="true" />
+            <element signature="e#1486#1514#0" expanded="true" />
+            <element signature="e#1548#1589#0" expanded="true" />
           </folding>
         </state>
       </provider>
